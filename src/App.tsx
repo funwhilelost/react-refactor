@@ -10,17 +10,17 @@ function App() {
     <BrowserRouter>
       <div>
         <nav>
-          <Link to="/">Bigass Component</Link> &gt;{" "}
-          <Link to="/stageone">Separated Components</Link> &gt;{" "}
-          <Link to="/stagetwo">Unidirectional Store</Link> &gt;{" "}
-          <Link to="/stagethree">Form Handling</Link>
+          <Link to="/react-refactor/">Bigass Component</Link> &gt;{" "}
+          <Link to="/react-refactor/stageone">Separated Components</Link> &gt;{" "}
+          <Link to="/react-refactor/stagetwo">Unidirectional Store</Link> &gt;{" "}
+          <Link to="/react-refactor/stagethree">Form Handling</Link>
         </nav>
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/stageone" element={<StageOne />} />
-          <Route path="/stagetwo" element={<StageTwo />} />
-          <Route path="/stagethree" element={<StageThree />} />
+          <Route path="/react-refactor/" element={<Home />} />
+          <Route path="/react-refactor/stageone" element={<StageOne />} />
+          <Route path="/react-refactor/stagetwo" element={<StageTwo />} />
+          <Route path="/react-refactor/stagethree" element={<StageThree />} />
         </Routes>
       </div>
     </BrowserRouter>
