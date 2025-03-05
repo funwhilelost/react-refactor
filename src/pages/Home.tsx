@@ -26,12 +26,38 @@ const Home: React.FC = () => {
       });
   }, []);
 
+  const shuffleCharacters = () => {
+    setCharacters(prevCharacters => {
+      const shuffled = [...prevCharacters];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      return shuffled;
+    });
+  };
+
   if (loading) return <div>Loading...</div>;
   if (error) return <div>{error}</div>;
 
   return (
     <div>
       <h1>Rick and Morty Characters</h1>
+      <p>This is the "pile of stuff" mode where all the logic, event handling, and layout are handled together.</p>
+      <button 
+        onClick={shuffleCharacters}
+        style={{
+          margin: '1rem',
+          padding: '0.5rem 1rem',
+          backgroundColor: '#4CAF50',
+          color: 'white',
+          border: 'none',
+          borderRadius: '4px',
+          cursor: 'pointer'
+        }}
+      >
+        Randomize Characters
+      </button>
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
